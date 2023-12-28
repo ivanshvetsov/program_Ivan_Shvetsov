@@ -1,11 +1,17 @@
-def count_squares(A, B, C):
-    squares_a = A // C
-    squares_b = B // C
-    total_squares = squares_a * squares_b
-    return total_squares
+import sys
 
-A = int(input("Введите сторону большого прямоугольника А:"))
-B = int(input("Введите сторону большого прямоугольника В:"))
-C = int(input("Введите сторону маленького квадрата:"))
-result = count_squares(A, B, C)
-print("Количество маленьких квадратов поместившихся в большой прямоугольник:", result)
+a = float(input('Введите сторону прямоугольника А '))
+b = float(input('Введите сторону прямоугольника В '))
+c = float(input('Введите число С '))
+if a<=0 or b<=0 or c<=0:
+    print('Ошибка. Число должно быть больше нуля.')
+    sys.exit()
+
+priamoug = a * b
+kvadr = c ** 2
+summ = priamoug
+done = 0
+while summ>= kvadr:
+    summ -= kvadr
+    done += 1
+print('В прямоугольник AB поместятся',done,'квадратa(ов) со стороной С')
