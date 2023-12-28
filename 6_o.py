@@ -1,18 +1,10 @@
-def is_power_of_three(N):
-    # Проверяем, что N больше 0
-    if N <= 0:
-        return False
-    
-    # Пока N делится на 3 без остатка
-    while N % 3 == 0:
-        # Делим N на 3
-        N //= 3
-    
-    # Если в конце получилось число 1, то N является степенью числа 3
-    return N == 1
-
-# Вводим целое число N
-N = int(input("Введите целое число N (> 0): "))
-
-# Выводим результат
-print(is_power_of_three(N))
+a = int(input(''))
+n = a
+for i in range(a):
+    a =n/3
+    n =a
+    if n == 1:
+        print(True)
+        break
+if n != 1:
+    print(False)
